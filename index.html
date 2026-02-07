@@ -1,126 +1,1468 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fluxera Energy</title>
- 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fluxera Energy - Advanced Battery Intelligence Platform. AI-powered battery safety, testing intelligence, and certification readiness for EV and BESS systems." />
+  <meta name="keywords" content="battery intelligence, EV safety, BESS, battery testing, AI battery health, hydrogen energy" />
+  <title>Fluxera Energy | Advanced Battery Intelligence Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-bg: #0a0e27;
+      --secondary-bg: #0f172a;
+      --card-bg: #1e293b;
+      --accent-blue: #3b82f6;
+      --accent-cyan: #06b6d4;
+      --accent-purple: #8b5cf6;
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --border-color: #334155;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b1f3a;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      background: var(--primary-bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 14, 39, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    .logo-image {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: cover;
+      animation: logoFloat 3s ease-in-out infinite;
+    }
+
+    .logo-text {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    @keyframes logoFloat {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* Hero Section */
+    header {
+      padding: 140px 20px 100px;
+      text-align: center;
+      background: radial-gradient(circle at top, #1e3a8a, var(--primary-bg));
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(59,130,246,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.5;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+      animation: heroGlow 15s ease-in-out infinite;
+    }
+
+    @keyframes heroGlow {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      50% {
+        transform: translate(10%, 10%) scale(1.1);
+      }
+    }
+
+    .hero-logo {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 2rem;
+      position: relative;
+      z-index: 2;
+      animation: fadeInScale 1s ease-out;
+    }
+
+    .hero-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 30px rgba(6, 182, 212, 0.3));
+      animation: logoRotate 20s linear infinite;
+    }
+
+    @keyframes logoRotate {
+      0% {
+        transform: rotateY(0deg);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid var(--accent-blue);
+      border-radius: 50px;
+      font-size: 0.875rem;
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.8s ease-out;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #fff, var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInUp 0.8s ease-out 0.2s backwards;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+      color: var(--accent-cyan);
+      margin-bottom: 1rem;
+      font-weight: 600;
+      animation: fadeInUp 0.8s ease-out 0.4s backwards;
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      animation: fadeInUp 0.8s ease-out 0.6s backwards;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease-out 0.8s backwards;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
       color: white;
     }
- 
-    .hero {
-      text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(180deg, #081428, #0b1f3a);
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
     }
- 
-    .logo {
-      width: 120px;
-      margin-bottom: 20px;
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 2px solid var(--border-color);
     }
- 
-    h1 {
-      font-size: 48px;
-      margin: 10px 0;
-      letter-spacing: 1px;
+
+    .btn-secondary:hover {
+      border-color: var(--accent-cyan);
+      background: rgba(6, 182, 212, 0.1);
     }
- 
-    .tagline {
-      color: #7fd3ff;
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
- 
-    .hero-text {
-      max-width: 700px;
+
+    /* Section Styles */
+    section {
+      padding: 100px 20px;
+      max-width: 1200px;
       margin: auto;
-      font-size: 18px;
-      color: #cfe8ff;
     }
- 
-    .section {
-      padding: 60px 20px;
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-badge {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: rgba(139, 92, 246, 0.1);
+      border: 1px solid var(--accent-purple);
+      border-radius: 50px;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      color: var(--accent-purple);
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .section-description {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Card Grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-blue);
+      box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2);
+    }
+
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+
+    .card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Stats Section */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
       text-align: center;
     }
- 
-    .cards {
+
+    .stat-item {
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 3rem;
+      margin-top: 3rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent-blue), var(--accent-cyan));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      padding-left: 2rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -3.5rem;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      border: 4px solid var(--primary-bg);
+    }
+
+    .timeline-content {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    .timeline-date {
+      color: var(--accent-blue);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Team Section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .team-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-cyan);
+    }
+
+    .team-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .team-name {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-role {
+      color: var(--accent-cyan);
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .contact-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+    }
+
+    .contact-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent-cyan);
+    }
+
+    .contact-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-card a {
+      color: var(--accent-blue);
+      text-decoration: none;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--secondary-bg);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 2rem;
+      margin: 2rem 0;
       flex-wrap: wrap;
-      margin-top: 30px;
     }
- 
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.6;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    /* Floating Particles */
+    .hero-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--accent-cyan);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.6;
+    }
+
+    .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+    .particle:nth-child(2) { left: 20%; top: 80%; animation-delay: 1s; }
+    .particle:nth-child(3) { left: 30%; top: 40%; animation-delay: 2s; }
+    .particle:nth-child(4) { left: 40%; top: 60%; animation-delay: 3s; }
+    .particle:nth-child(5) { left: 50%; top: 30%; animation-delay: 4s; }
+    .particle:nth-child(6) { left: 60%; top: 70%; animation-delay: 5s; }
+    .particle:nth-child(7) { left: 70%; top: 50%; animation-delay: 2.5s; }
+    .particle:nth-child(8) { left: 80%; top: 35%; animation-delay: 1.5s; }
+    .particle:nth-child(9) { left: 90%; top: 65%; animation-delay: 3.5s; }
+    .particle:nth-child(10) { left: 15%; top: 55%; animation-delay: 4.5s; }
+
+    /* Card Hover Effects */
     .card {
-      background: #0f2a52;
-      padding: 25px;
-      border-radius: 12px;
-      width: 260px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
     }
- 
-    .card h3 {
-      color: #7fd3ff;
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s;
+      pointer-events: none;
     }
- 
-    footer {
-      background: #061224;
-      padding: 30px;
-      text-align: center;
-      color: #9bbce0;
+
+    .card:hover::before {
+      opacity: 1;
+      animation: rotate 3s linear infinite;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Icon Animation */
+    .icon-pulse {
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline {
+        padding-left: 2rem;
+      }
+    }
+
+    /* Scroll animations */
+    .fade-in {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
     }
   </style>
 </head>
- 
 <body>
- 
-  <div class="hero">
-    <img src="fluxera.jpeg" class="logo" alt="Fluxera logo">
- 
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="fluxera.jpeg" alt="Fluxera Energy Logo" class="logo-image">
+      <span class="logo-text">FLUXERA</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#solutions">Verticals</a></li>
+      <li><a href="#case-studies">Case Studies</a></li>
+      <li><a href="#blog">Insights</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<header id="home">
+  <div class="hero-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-logo">
+      <img src="fluxera.jpeg" alt="Fluxera Energy">
+    </div>
+    <div class="hero-badge">🚀 Independent Testing Infrastructure | Tumkur/Bengaluru, Karnataka</div>
     <h1>FLUXERA ENERGY</h1>
-    <div class="tagline">Advanced Battery Intelligence</div>
- 
-    <p class="hero-text">
-      AI-powered battery safety, testing intelligence, and certification readiness
-      for EV batteries, BESS, and future energy systems.
+    <div class="hero-subtitle">Battery & Grid Energy Safety Infrastructure Platform</div>
+    <p class="hero-description">
+      India's first independent battery testing and validation infrastructure. Get certification-ready in 4-6 weeks instead of 6-12 months. Serving OEMs, insurers, banks, and fleet operators with comprehensive safety validation, data intelligence, and risk assessment capabilities.
+    </p>
+    <div class="cta-buttons">
+      <a href="#platform" class="btn btn-primary">Explore Platform</a>
+      <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+    </div>
+  </div>
+</header>
+
+<!-- Platform Overview Section -->
+<section id="platform">
+  <div class="section-header">
+    <div class="section-badge">🔋 FOUR-LAYER ARCHITECTURE</div>
+    <h2>Fluxera Platform Architecture</h2>
+    <p class="section-description">
+      A comprehensive four-layer platform addressing India's structural bottleneck in battery safety, certification readiness, and risk assessment. Bridging the gap between manufacturers, insurers, lenders, and regulators.
     </p>
   </div>
- 
-  <div class="section">
-    <h2>AI-Powered Battery Management</h2>
- 
-    <div class="cards">
-      <div class="card">
-        <h3>Digital Twin</h3>
-        <p>Physics-based battery models for real-time simulation and diagnostics.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🔬</div>
+      <h3>Layer 1 — Physical Testing Infrastructure</h3>
+      <p>
+        Dedicated battery safety and performance testing infrastructure aligned to AIS/BIS and IEC standards. Comprehensive validation covering thermal runaway, cycle life, mechanical integrity, and electrical safety for EV batteries and BESS deployments.
+      </p>
+      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+        <strong style="color: var(--accent-cyan);">Standards Compliance:</strong>
+        <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">
+          AIS 156, AIS 048, BIS 16046, IEC 62133, IEC 62619, UL 1642, UN 38.3
+        </div>
       </div>
- 
-      <div class="card">
-        <h3>Health Intelligence</h3>
-        <p>Advanced battery health monitoring and lifecycle intelligence.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Layer 2 — Data Intelligence Layer</h3>
+      <p>
+        Structured capture and analysis of test outcomes enabling failure pattern recognition, predictive insights, and anomaly detection. Building India's first comprehensive battery safety and performance database for actuarial risk modeling and trend analysis.
+      </p>
+      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+        <strong style="color: var(--accent-cyan);">Key Capabilities:</strong>
+        <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">
+          Failure analytics, Statistical modeling, Predictive algorithms, Real-time dashboards
+        </div>
       </div>
- 
-      <div class="card">
-        <h3>Predictions</h3>
-        <p>AI-driven safety and performance prediction systems.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">✅</div>
+      <h3>Layer 3 — Compliance Engine</h3>
+      <p>
+        ISO/IEC 17025 aligned workflows supporting NABL accreditation and ongoing audit readiness. Streamlined certification processes reducing time-to-market from 6-12 months to 4-6 weeks, enabling faster product launches and capital deployment.
+      </p>
+      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+        <strong style="color: var(--accent-cyan);">Accreditation Target:</strong>
+        <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">
+          NABL (ISO/IEC 17025), BIS recognition, Export certification support
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🛡️</div>
+      <h3>Layer 4 — Risk & Trust Layer</h3>
+      <p>
+        Safety grading and analytics infrastructure supporting insurance underwriting and bank financing decisions. Quantified risk profiles reducing claim volatility for insurers and enabling confident lending for battery-intensive assets and EV deployments.
+      </p>
+      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+        <strong style="color: var(--accent-cyan);">Stakeholders Served:</strong>
+        <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">
+          Insurance underwriters, Bank lenders, Fleet operators, OEMs
+        </div>
       </div>
     </div>
   </div>
- 
-  <div class="section">
-    <h2>Fluxera Energy Private Limited</h2>
-    <p>Tumakuru, Karnataka, India</p>
-    <p>info@fluxeraenergy.com</p>
+</section>
+
+<!-- Market Problem Section -->
+<section>
+  <div class="section-header">
+    <div class="section-badge">⚠️ MARKET CHALLENGE</div>
+    <h2>Addressing India's Battery Safety Crisis</h2>
+    <p class="section-description">
+      Systemic gaps in testing infrastructure, certification capacity, and risk data are creating structural bottlenecks in India's energy transition.
+    </p>
   </div>
- 
-  <footer>
-    © 2026 Fluxera Energy Private Limited
-  </footer>
- 
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🔥</div>
+      <h3>Safety Crisis</h3>
+      <p>
+        <strong>100+ battery fire incidents</strong> recorded in India during 2025 alone, highlighting inadequate safety validation and thermal management failures. Growing public concern threatens consumer confidence in EV adoption.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">⏰</div>
+      <h3>Certification Backlog</h3>
+      <p>
+        <strong>6-12 month delays</strong> at authorized testing facilities materially impact product launches, working capital, and competitive positioning. Limited testing infrastructure cannot meet exponential demand growth.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📉</div>
+      <h3>Insurance Volatility</h3>
+      <p>
+        Insurers face <strong>elevated claim unpredictability</strong> in the absence of actuarial safety data and historical failure patterns. Premium pricing remains conservative, limiting market growth.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🏦</div>
+      <h3>Financing Caution</h3>
+      <p>
+        Banks remain <strong>hesitant to finance</strong> battery-intensive assets due to unquantified safety risks and uncertain residual values. Capital availability constraints limit fleet expansion and infrastructure deployment.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Solutions Section -->
+<section id="solutions">
+  <div class="section-header">
+    <div class="section-badge">💡 BUSINESS VERTICALS</div>
+    <h2>Target Market Segments</h2>
+    <p class="section-description">
+      Serving critical stakeholders across India's battery energy value chain with specialized testing, validation, and risk intelligence services.
+    </p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🏭</div>
+      <h3>EV & Battery OEMs</h3>
+      <p>
+        Comprehensive safety and performance testing for 2W, 3W, 4W, and commercial EV manufacturers. Fast-track certification support, failure analysis, thermal management validation, and export compliance documentation reducing time-to-market by 60%.
+      </p>
+      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Services:</strong> Type approval testing, Batch validation, Export certification, Failure forensics
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>BESS & Grid Storage</h3>
+      <p>
+        Safety validation and performance verification for stationary Battery Energy Storage Systems. Grid integration testing, fire safety protocols, thermal management analysis, and long-duration energy storage (LDES) characterization for utility-scale and C&I deployments.
+      </p>
+      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Applications:</strong> Utility BESS, C&I storage, Renewable integration, Peak shaving systems
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🏢</div>
+      <h3>Insurance Companies</h3>
+      <p>
+        Actuarial-grade safety data and risk scoring for EV and BESS insurance products. Historical failure pattern analysis, claim prediction models, and standardized safety grading enabling accurate premium pricing and reduced claim volatility.
+      </p>
+      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Deliverables:</strong> Risk scores, Loss frequency data, Safety certifications, Failure forensics
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🏦</div>
+      <h3>Banks & NBFCs</h3>
+      <p>
+        Quantified safety and residual value assessments supporting vehicle financing and fleet leasing decisions. Battery health validation, lifecycle projections, and collateral risk grading enabling confident lending for battery-intensive assets.
+      </p>
+      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Use Cases:</strong> Vehicle financing, Fleet leasing, Asset-backed lending, Residual value insurance
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🚚</div>
+      <h3>Fleet Operators</h3>
+      <p>
+        Independent battery health assessment for commercial EV fleet procurement and operations. Pre-purchase validation, in-service monitoring, predictive maintenance scheduling, and second-life battery evaluation for 3PL, e-commerce, and public transport fleets.
+      </p>
+      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Fleet Types:</strong> Logistics, E-commerce, Public transport, Last-mile delivery
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🔋</div>
+      <h3>Testing Labs & Research</h3>
+      <p>
+        Collaborative testing infrastructure and data sharing partnerships with academic institutions and research centers. Joint R&D programs, advanced materials characterization, next-generation chemistry validation, and knowledge transfer initiatives.
+      </p>
+      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-secondary);">
+        <strong>Partnerships:</strong> IITs, NITs, CSIR labs, International research consortia
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Case Studies Section -->
+<section id="case-studies">
+  <div class="section-header">
+    <div class="section-badge">📋 CASE STUDIES</div>
+    <h2>Real-World Impact Stories</h2>
+    <p class="section-description">
+      How Fluxera's independent testing and validation infrastructure is transforming battery safety and accelerating India's energy transition.
+    </p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1)); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
+        <div style="font-size: 0.875rem; color: var(--accent-cyan); font-weight: 600;">EV MANUFACTURER</div>
+        <h3 style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Reducing Certification Time by 65%</h3>
+      </div>
+      <p>
+        A leading Indian 2-wheeler EV manufacturer faced 8-month certification delays, blocking ₹12 Cr in working capital and missing critical festive season launches. Fluxera's fast-track testing protocol achieved complete AIS 156 and BIS 16046 compliance in 10 weeks.
+      </p>
+      <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(6, 182, 212, 0.05); border-radius: 8px; border-left: 3px solid var(--accent-cyan);">
+        <strong style="color: var(--accent-cyan);">Results:</strong>
+        <ul style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem; padding-left: 1.5rem;">
+          <li>Certification time: 8 months → 10 weeks (65% reduction)</li>
+          <li>Working capital freed: ₹12 Crore</li>
+          <li>Market launch: Advanced by 5 months</li>
+          <li>Revenue impact: ₹45 Cr additional sales captured</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1)); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
+        <div style="font-size: 0.875rem; color: var(--accent-cyan); font-weight: 600;">INSURANCE PROVIDER</div>
+        <h3 style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Actuarial Risk Model for EV Insurance</h3>
+      </div>
+      <p>
+        A national insurer struggled with 40% claim volatility in EV policies due to absence of historical failure data. Fluxera provided structured safety analytics covering 5,000+ battery packs, enabling data-driven premium pricing and product design.
+      </p>
+      <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(6, 182, 212, 0.05); border-radius: 8px; border-left: 3px solid var(--accent-cyan);">
+        <strong style="color: var(--accent-cyan);">Results:</strong>
+        <ul style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem; padding-left: 1.5rem;">
+          <li>Claim volatility reduced by 28%</li>
+          <li>Premium optimization: 15% reduction for low-risk segments</li>
+          <li>Risk-based pricing model deployed</li>
+          <li>Portfolio growth: 3.2x in 12 months</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1)); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
+        <div style="font-size: 0.875rem; color: var(--accent-cyan); font-weight: 600;">LOGISTICS FLEET</div>
+        <h3 style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Fleet Battery Health Validation</h3>
+      </div>
+      <p>
+        A major e-commerce logistics partner planned deployment of 2,000 electric 3-wheelers but lacked confidence in battery lifecycle and residual values. Fluxera conducted independent health assessments and warranty validation across shortlisted OEMs.
+      </p>
+      <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(6, 182, 212, 0.05); border-radius: 8px; border-left: 3px solid var(--accent-cyan);">
+        <strong style="color: var(--accent-cyan);">Results:</strong>
+        <ul style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem; padding-left: 1.5rem;">
+          <li>Identified 2 OEMs meeting 5-year TCO targets</li>
+          <li>Negotiated stronger warranty terms backed by data</li>
+          <li>Fleet deployment confidence: High</li>
+          <li>Projected 5-year TCO savings: ₹8.5 Cr vs diesel baseline</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1)); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
+        <div style="font-size: 0.875rem; color: var(--accent-cyan); font-weight: 600;">BESS DEVELOPER</div>
+        <h3 style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Grid-Scale BESS Safety Certification</h3>
+      </div>
+      <p>
+        A renewable energy developer faced bank financing delays for a 50 MWh BESS project due to unvalidated safety protocols and absence of IEC 62619 certification. Fluxera provided comprehensive system-level testing and fire safety validation.
+      </p>
+      <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(6, 182, 212, 0.05); border-radius: 8px; border-left: 3px solid var(--accent-cyan);">
+        <strong style="color: var(--accent-cyan);">Results:</strong>
+        <ul style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem; padding-left: 1.5rem;">
+          <li>IEC 62619 and UL 9540A compliance achieved</li>
+          <li>Financing approved: ₹180 Cr debt funding</li>
+          <li>Project timeline: Back on track (4-month delay avoided)</li>
+          <li>Insurance premium: 22% lower than initially quoted</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog Section -->
+<section id="blog">
+  <div class="section-header">
+    <div class="section-badge">📰 INSIGHTS & BLOG</div>
+    <h2>Latest from Fluxera</h2>
+    <p class="section-description">
+      Expert perspectives on battery safety, testing standards, regulatory developments, and the future of energy storage in India.
+    </p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div style="color: var(--accent-purple); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">FEBRUARY 5, 2026 • INDUSTRY ANALYSIS</div>
+      <h3>India's Battery Fire Crisis: Root Causes and Systematic Solutions</h3>
+      <p>
+        Deep dive into the 100+ battery fire incidents recorded in 2025, analyzing failure modes, thermal runaway triggers, and the critical role of independent testing infrastructure in preventing future incidents. Data-driven recommendations for OEMs, regulators, and safety authorities.
+      </p>
+      <a href="#" style="display: inline-block; margin-top: 1rem; color: var(--accent-cyan); text-decoration: none; font-weight: 600;">Read More →</a>
+    </div>
+
+    <div class="card">
+      <div style="color: var(--accent-purple); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">JANUARY 28, 2026 • POLICY UPDATE</div>
+      <h3>AIS 156 Amendment 4: What EV Manufacturers Need to Know</h3>
+      <p>
+        Comprehensive breakdown of the latest amendments to India's primary EV battery safety standard. New testing requirements, enhanced thermal propagation protocols, and compliance timelines for existing and new vehicle models. Practical implementation guidance for OEMs.
+      </p>
+      <a href="#" style="display: inline-block; margin-top: 1rem; color: var(--accent-cyan); text-decoration: none; font-weight: 600;">Read More →</a>
+    </div>
+
+    <div class="card">
+      <div style="color: var(--accent-purple); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">JANUARY 15, 2026 • TECHNOLOGY</div>
+      <h3>Building India's Battery Safety Data Commons</h3>
+      <p>
+        How structured data capture from testing infrastructure can create a national battery safety intelligence repository. Enabling actuarial modeling for insurance, residual value prediction for financing, and evidence-based policy making for sustainable EV adoption at scale.
+      </p>
+      <a href="#" style="display: inline-block; margin-top: 1rem; color: var(--accent-cyan); text-decoration: none; font-weight: 600;">Read More →</a>
+    </div>
+
+    <div class="card">
+      <div style="color: var(--accent-purple); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">DECEMBER 20, 2025 • MARKET INSIGHTS</div>
+      <h3>The ₹50,000 Crore Battery Testing Gap in India</h3>
+      <p>
+        Market sizing analysis of India's battery testing infrastructure deficit. Current capacity vs. projected demand through 2030, regional distribution of facilities, certification backlog economics, and the investment opportunity in independent testing infrastructure serving multiple stakeholders.
+      </p>
+      <a href="#" style="display: inline-block; margin-top: 1rem; color: var(--accent-cyan); text-decoration: none; font-weight: 600;">Read More →</a>
+    </div>
+
+    <div class="card">
+      <div style="color: var(--accent-purple); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">DECEMBER 8, 2025 • STANDARDS</div>
+      <h3>ISO/IEC 17025 for Battery Testing Labs: Complete Guide</h3>
+      <p>
+        Step-by-step roadmap for achieving and maintaining NABL accreditation for battery testing facilities. Quality management systems, measurement uncertainty, equipment calibration protocols, and ongoing surveillance audit requirements for sustained accreditation status.
+      </p>
+      <a href="#" style="display: inline-block; margin-top: 1rem; color: var(--accent-cyan); text-decoration: none; font-weight: 600;">Read More →</a>
+    </div>
+
+    <div class="card">
+      <div style="color: var(--accent-purple); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">NOVEMBER 22, 2025 • RESEARCH</div>
+      <h3>Second Life Battery Economics: Testing Requirements and Market Viability</h3>
+      <p>
+        Economic and technical analysis of retired EV battery repurposing for stationary storage. State of Health assessment methodologies, safety re-certification requirements, remaining useful life prediction, and financial modeling for second-life business cases in Indian market conditions.
+      </p>
+      <a href="#" style="display: inline-block; margin-top: 1rem; color: var(--accent-cyan); text-decoration: none; font-weight: 600;">Read More →</a>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 3rem;">
+    <a href="#contact" class="btn btn-secondary">Subscribe to Fluxera Insights</a>
+  </div>
+</section>
+
+<!-- Testing Infrastructure Section -->
+<section id="technology">
+  <div class="section-header">
+    <div class="section-badge">🔬 TESTING CAPABILITIES</div>
+    <h2>Comprehensive Testing Infrastructure</h2>
+    <p class="section-description">
+      State-of-the-art equipment and protocols aligned to international standards for complete battery safety and performance validation.
+    </p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🌡️</div>
+      <h3>Thermal Safety Testing</h3>
+      <p>
+        Thermal runaway propagation, thermal management validation, overcharge/over-discharge safety, nail penetration, crush tests, and fire propagation analysis. Climate chamber testing from -40°C to +85°C with controlled humidity.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>Electrical Performance</h3>
+      <p>
+        Capacity verification, charge/discharge efficiency, power capability assessment, internal resistance measurement, and cycle life testing. High-precision battery analyzers with programmable charge/discharge profiles for realistic load simulation.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">�</div>
+      <h3>Mechanical & Environmental</h3>
+      <p>
+        Vibration testing (random & sinusoidal), mechanical shock, drop tests, ingress protection (IP rating) validation, salt spray corrosion testing, and altitude simulation. Automotive-grade environmental test chambers.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🔐</div>
+      <h3>Safety & Compliance</h3>
+      <p>
+        Short circuit protection, overcurrent protection, BMS validation, insulation resistance, dielectric strength testing, and EMC/EMI characterization. Full documentation aligned to AIS, BIS, IEC, and UN 38.3 requirements.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Data Acquisition & Analytics</h3>
+      <p>
+        High-speed multi-channel data loggers capturing voltage, current, temperature, and pressure at millisecond resolution. Automated test execution, real-time monitoring, and cloud-based data storage with API access for client integration.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">�</div>
+      <h3>Failure Analysis Lab</h3>
+      <p>
+        Post-incident forensic investigation, cell teardown and materials analysis, failure mode diagnosis, root cause identification, and corrective action recommendations. Supporting insurance claims and warranty disputes with expert testimony.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section>
+  <div class="section-header">
+    <div class="section-badge">📈 COMPETITIVE ADVANTAGE</div>
+    <h2>Fluxera by the Numbers</h2>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-number">4-6</span>
+      <div class="stat-label">Weeks Certification Timeline</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">60%</span>
+      <div class="stat-label">Faster Time-to-Market</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">NABL</span>
+      <div class="stat-label">ISO 17025 Accreditation Target</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">Multi</span>
+      <div class="stat-label">Stakeholder Platform</div>
+    </div>
+  </div>
+</section>
+
+<!-- Future Vision Section -->
+<section>
+  <div class="section-header">
+    <div class="section-badge">🚀 ROADMAP</div>
+    <h2>Growth Trajectory & Future Vision</h2>
+    <p class="section-description">
+      Strategic expansion from battery testing infrastructure to comprehensive electrochemical energy intelligence platform serving India and international markets.
+    </p>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <div class="timeline-date">2025-2026 | Phase 1</div>
+        <h3>Testing Infrastructure Launch</h3>
+        <p>₹1.90 Cr greenfield facility operational in Tumkur/Bengaluru. NABL accreditation achieved. Serving EV OEMs, insurers, and fleet operators with 4-6 week certification timelines. Building India's first battery safety data repository.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <div class="timeline-date">2027 | Phase 2</div>
+        <h3>Data Intelligence & Risk Platform</h3>
+        <p>Launch actuarial risk scoring platform for insurance and lending. Predictive analytics for battery lifecycle management. Expansion to BESS testing capabilities. Strategic partnerships with major OEMs and financial institutions.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <div class="timeline-date">2028+ | Phase 3</div>
+        <h3>Multi-Chemistry Energy Intelligence</h3>
+        <p>Expand beyond lithium-ion to hydrogen storage safety, fuel cell validation, and solid-state battery testing. Regional hub expansion. International market entry. Building the global standard for electrochemical energy intelligence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <div class="section-header">
+    <div class="section-badge">🏢 ABOUT FLUXERA</div>
+    <h2>About Fluxera Energy</h2>
+    <p class="section-description">
+      Fluxera Energy Private Limited is building the intelligence layer for battery energy ecosystems. Founded in 2024 and based in Tumakuru, Karnataka, we are at the forefront of battery safety innovation.
+    </p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🎯</div>
+      <h3>Our Mission</h3>
+      <p>
+        To address India's battery safety crisis through independent testing infrastructure, structured data intelligence, and risk assessment capabilities. Enabling confident capital deployment, reducing certification backlogs, and supporting actuarial decision-making for insurers and lenders in the rapidly expanding EV and BESS ecosystems.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">👁️</div>
+      <h3>Our Vision</h3>
+      <p>
+        To become India's trusted infrastructure for battery safety validation and risk intelligence, serving as the bridge between manufacturers, financial institutions, and regulators. Building the data foundation for a sustainable, safe, and scalable energy transition.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">💎</div>
+      <h3>Our Values</h3>
+      <p>
+        <strong>Independence:</strong> Unbiased, third-party validation.<br>
+        <strong>Rigor:</strong> International standard compliance.<br>
+        <strong>Speed:</strong> 60% faster certification timelines.<br>
+        <strong>Data Integrity:</strong> Structured, auditable intelligence.<br>
+        <strong>Stakeholder Focus:</strong> Multi-party value creation.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Fluxera Section -->
+<section>
+  <div class="section-header">
+    <div class="section-badge">✨ COMPETITIVE DIFFERENTIATION</div>
+    <h2>Why Fluxera?</h2>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>Speed & Scalability</h3>
+      <p>Reduce certification time from 6-12 months to 4-6 weeks. Modular infrastructure designed for rapid capacity expansion. Automated workflows and digital documentation eliminating manual bottlenecks.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🔬</div>
+      <h3>Technical Excellence</h3>
+      <p>ISO/IEC 17025 compliant workflows targeting NABL accreditation. Comprehensive test coverage across thermal, electrical, mechanical, and safety domains. Expert team with deep electrochemical systems experience.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Data Intelligence Layer</h3>
+      <p>Beyond pass/fail certification to structured failure analytics, predictive insights, and actuarial risk modeling. Building India's first battery safety data commons supporting evidence-based decision-making.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🤝</div>
+      <h3>Multi-Stakeholder Platform</h3>
+      <p>Unique positioning serving OEMs, insurers, lenders, fleet operators, and regulators. Aligned incentives creating network effects and data flywheel. Independent infrastructure trusted by all ecosystem participants.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📍</div>
+      <h3>Strategic Location</h3>
+      <p>Karnataka-based in India's EV manufacturing hub with proximity to major OEMs, component suppliers, and testing ecosystems. Access to skilled technical talent and supportive industrial policy environment.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">💼</div>
+      <h3>Capital Efficiency</h3>
+      <p>₹1.90 Cr greenfield investment delivering immediate certification capacity and long-term data infrastructure value. Asset-light digital intelligence layer with high-margin revenue potential as data scales.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <div class="section-header">
+    <div class="section-badge">📧 GET IN TOUCH</div>
+    <h2>Contact Us</h2>
+    <p class="section-description">
+      Ready to transform your battery operations? Let's discuss how Fluxera can help.
+    </p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-icon">📧</div>
+      <h3>Email</h3>
+      <p><a href="mailto:info@fluxeraenergy.com">info@fluxeraenergy.com</a></p>
+      <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+        For business inquiries, partnerships, or general information
+      </p>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">📍</div>
+      <h3>Location</h3>
+      <p>Tumakuru, Karnataka<br>India</p>
+      <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+        Strategically located in Karnataka's emerging EV ecosystem
+      </p>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">🤝</div>
+      <h3>Partnerships</h3>
+      <p>OEMs, Testing Labs, Research Institutions</p>
+      <p style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+        Interested in collaboration? Reach out to discuss opportunities
+      </p>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 4rem; padding: 3rem; background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border-color);">
+    <h3 style="margin-bottom: 1rem;">Ready to Get Started?</h3>
+    <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+      Schedule a demo or consultation to see how Fluxera can enhance your battery operations.
+    </p>
+    <a href="mailto:info@fluxeraenergy.com?subject=Demo Request" class="btn btn-primary">Request a Demo</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">FLUXERA ENERGY</div>
+    <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+      Advanced Battery Intelligence Platform
+    </p>
+
+    <div class="footer-links">
+      <a href="#platform">Platform</a>
+      <a href="#solutions">Verticals</a>
+      <a href="#case-studies">Case Studies</a>
+      <a href="#blog">Insights</a>
+      <a href="#technology">Technology</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="mailto:info@fluxeraenergy.com">Email Us</a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025-2026 Fluxera Energy Private Limited. All rights reserved.</p>
+      <p style="margin-top: 0.5rem;">Tumakuru/Bengaluru, Karnataka, India</p>
+      <p style="margin-top: 1rem; font-size: 0.8rem;">
+        Battery & Grid Energy Safety Infrastructure Platform | ₹1.90 Cr Greenfield Investment
+      </p>
+      <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+        Independent testing, data intelligence, compliance readiness, and risk assessment for India's energy transition.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const offsetTop = target.offsetTop - 80;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Add scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // Observe all cards and sections
+  document.querySelectorAll('.card, .stat-item, .timeline-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    observer.observe(el);
+  });
+
+  // Navbar background on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 100) {
+      nav.style.background = 'rgba(10, 14, 39, 0.98)';
+      nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+    } else {
+      nav.style.background = 'rgba(10, 14, 39, 0.95)';
+      nav.style.boxShadow = 'none';
+    }
+  });
+</script>
+
 </body>
 </html>
