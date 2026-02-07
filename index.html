@@ -113,6 +113,69 @@
       color: var(--accent-cyan);
     }
 
+    /* Tab Navigation */
+    .tab-navigation {
+      position: sticky;
+      top: 80px;
+      background: var(--secondary-bg);
+      border-bottom: 2px solid var(--border-color);
+      z-index: 100;
+      padding: 0;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .tab-nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+    }
+
+    .tab-btn {
+      padding: 1rem 2rem;
+      background: transparent;
+      color: var(--text-secondary);
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+      color: var(--accent-cyan);
+      background: rgba(6, 182, 212, 0.05);
+    }
+
+    .tab-btn.active {
+      color: var(--accent-cyan);
+      border-bottom-color: var(--accent-cyan);
+      background: rgba(6, 182, 212, 0.1);
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     /* Hero Section */
     header {
       padding: 140px 20px 100px;
@@ -725,16 +788,25 @@
       <span class="logo-text">FLUXERA</span>
     </div>
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#platform">Platform</a></li>
-      <li><a href="#solutions">Verticals</a></li>
-      <li><a href="#case-studies">Case Studies</a></li>
-      <li><a href="#blog">Insights</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#home" onclick="showTab('home'); return false;">Home</a></li>
+      <li><a href="#about" onclick="showTab('about'); return false;">About</a></li>
+      <li><a href="#contact" onclick="showTab('contact'); return false;">Contact</a></li>
     </ul>
   </div>
 </nav>
+
+<!-- Tab Navigation -->
+<div class="tab-navigation" id="tabNav" style="display: none;">
+  <div class="tab-nav-container">
+    <button class="tab-btn active" onclick="showSection('overview')">🏠 Overview</button>
+    <button class="tab-btn" onclick="showSection('platform')">🔋 Platform</button>
+    <button class="tab-btn" onclick="showSection('verticals')">💡 Verticals</button>
+    <button class="tab-btn" onclick="showSection('case-studies')">📋 Case Studies</button>
+    <button class="tab-btn" onclick="showSection('insights')">📰 Insights</button>
+    <button class="tab-btn" onclick="showSection('technology')">🔬 Technology</button>
+    <button class="tab-btn" onclick="showSection('roadmap')">🚀 Roadmap</button>
+  </div>
+</div>
 
 <!-- Hero Section -->
 <header id="home">
@@ -767,8 +839,136 @@
   </div>
 </header>
 
+<!-- Main Content Container -->
+<div id="mainContent">
+
+<!-- Home Tab Content -->
+<div id="homeTab" class="main-tab-content">
+
+<!-- Overview Section -->
+<div id="overview" class="tab-content active">
+<!-- Market Problem Section -->
+<section>
+  <div class="section-header">
+    <div class="section-badge">⚠️ MARKET CHALLENGE</div>
+    <h2>Addressing India's Battery Safety Crisis</h2>
+    <p class="section-description">
+      Systemic gaps in testing infrastructure, certification capacity, and risk data are creating structural bottlenecks in India's energy transition.
+    </p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🔥</div>
+      <h3>Safety Crisis</h3>
+      <p>
+        <strong>100+ battery fire incidents</strong> recorded in India during 2025 alone, highlighting inadequate safety validation and thermal management failures. Growing public concern threatens consumer confidence in EV adoption.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">⏰</div>
+      <h3>Certification Backlog</h3>
+      <p>
+        <strong>6-12 month delays</strong> at authorized testing facilities materially impact product launches, working capital, and competitive positioning. Limited testing infrastructure cannot meet exponential demand growth.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📉</div>
+      <h3>Insurance Volatility</h3>
+      <p>
+        Insurers face <strong>elevated claim unpredictability</strong> in the absence of actuarial safety data and historical failure patterns. Premium pricing remains conservative, limiting market growth.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🏦</div>
+      <h3>Financing Caution</h3>
+      <p>
+        Banks remain <strong>hesitant to finance</strong> battery-intensive assets due to unquantified safety risks and uncertain residual values. Capital availability constraints limit fleet expansion and infrastructure deployment.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section>
+  <div class="section-header">
+    <div class="section-badge">📈 COMPETITIVE ADVANTAGE</div>
+    <h2>Fluxera by the Numbers</h2>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-number">4-6</span>
+      <div class="stat-label">Weeks Certification Timeline</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">60%</span>
+      <div class="stat-label">Faster Time-to-Market</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">NABL</span>
+      <div class="stat-label">ISO 17025 Accreditation Target</div>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">Multi</span>
+      <div class="stat-label">Stakeholder Platform</div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Fluxera Section -->
+<section>
+  <div class="section-header">
+    <div class="section-badge">✨ COMPETITIVE DIFFERENTIATION</div>
+    <h2>Why Fluxera?</h2>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>Speed & Scalability</h3>
+      <p>Reduce certification time from 6-12 months to 4-6 weeks. Modular infrastructure designed for rapid capacity expansion. Automated workflows and digital documentation eliminating manual bottlenecks.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🔬</div>
+      <h3>Technical Excellence</h3>
+      <p>ISO/IEC 17025 compliant workflows targeting NABL accreditation. Comprehensive test coverage across thermal, electrical, mechanical, and safety domains. Expert team with deep electrochemical systems experience.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Data Intelligence Layer</h3>
+      <p>Beyond pass/fail certification to structured failure analytics, predictive insights, and actuarial risk modeling. Building India's first battery safety data commons supporting evidence-based decision-making.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🤝</div>
+      <h3>Multi-Stakeholder Platform</h3>
+      <p>Unique positioning serving OEMs, insurers, lenders, fleet operators, and regulators. Aligned incentives creating network effects and data flywheel. Independent infrastructure trusted by all ecosystem participants.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">📍</div>
+      <h3>Strategic Location</h3>
+      <p>Karnataka-based in India's EV manufacturing hub with proximity to major OEMs, component suppliers, and testing ecosystems. Access to skilled technical talent and supportive industrial policy environment.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">💼</div>
+      <h3>Capital Efficiency</h3>
+      <p>Optimized infrastructure delivering immediate certification capacity and long-term data infrastructure value. Asset-light digital intelligence layer with high-margin revenue potential as data scales.</p>
+    </div>
+  </div>
+</section>
+</div>
+
 <!-- Platform Overview Section -->
-<section id="platform">
+<div id="platform" class="tab-content">
+<section id="platform-section">
   <div class="section-header">
     <div class="section-badge">🔋 FOUR-LAYER ARCHITECTURE</div>
     <h2>Fluxera Platform Architecture</h2>
@@ -835,54 +1035,11 @@
     </div>
   </div>
 </section>
-
-<!-- Market Problem Section -->
-<section>
-  <div class="section-header">
-    <div class="section-badge">⚠️ MARKET CHALLENGE</div>
-    <h2>Addressing India's Battery Safety Crisis</h2>
-    <p class="section-description">
-      Systemic gaps in testing infrastructure, certification capacity, and risk data are creating structural bottlenecks in India's energy transition.
-    </p>
-  </div>
-
-  <div class="card-grid">
-    <div class="card">
-      <div class="card-icon">🔥</div>
-      <h3>Safety Crisis</h3>
-      <p>
-        <strong>100+ battery fire incidents</strong> recorded in India during 2025 alone, highlighting inadequate safety validation and thermal management failures. Growing public concern threatens consumer confidence in EV adoption.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">⏰</div>
-      <h3>Certification Backlog</h3>
-      <p>
-        <strong>6-12 month delays</strong> at authorized testing facilities materially impact product launches, working capital, and competitive positioning. Limited testing infrastructure cannot meet exponential demand growth.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">📉</div>
-      <h3>Insurance Volatility</h3>
-      <p>
-        Insurers face <strong>elevated claim unpredictability</strong> in the absence of actuarial safety data and historical failure patterns. Premium pricing remains conservative, limiting market growth.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">🏦</div>
-      <h3>Financing Caution</h3>
-      <p>
-        Banks remain <strong>hesitant to finance</strong> battery-intensive assets due to unquantified safety risks and uncertain residual values. Capital availability constraints limit fleet expansion and infrastructure deployment.
-      </p>
-    </div>
-  </div>
-</section>
+</div>
 
 <!-- Solutions Section -->
-<section id="solutions">
+<div id="verticals" class="tab-content">
+<section id="solutions-section">
   <div class="section-header">
     <div class="section-badge">💡 BUSINESS VERTICALS</div>
     <h2>Target Market Segments</h2>
@@ -959,9 +1116,11 @@
     </div>
   </div>
 </section>
+</div>
 
 <!-- Case Studies Section -->
-<section id="case-studies">
+<div id="case-studies" class="tab-content">
+<section id="case-studies-section">
   <div class="section-header">
     <div class="section-badge">📋 CASE STUDIES</div>
     <h2>Real-World Impact Stories</h2>
@@ -1048,9 +1207,11 @@
     </div>
   </div>
 </section>
+</div>
 
 <!-- Blog Section -->
-<section id="blog">
+<div id="insights" class="tab-content">
+<section id="blog-section">
   <div class="section-header">
     <div class="section-badge">📰 INSIGHTS & BLOG</div>
     <h2>Latest from Fluxera</h2>
@@ -1089,9 +1250,9 @@
 
     <div class="card">
       <div style="color: var(--accent-purple); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem;">DECEMBER 20, 2025 • MARKET INSIGHTS</div>
-      <h3>The ₹50,000 Crore Battery Testing Gap in India</h3>
+      <h3>The Battery Testing Infrastructure Gap in India</h3>
       <p>
-        Market sizing analysis of India's battery testing infrastructure deficit. Current capacity vs. projected demand through 2030, regional distribution of facilities, certification backlog economics, and the investment opportunity in independent testing infrastructure serving multiple stakeholders.
+        Market sizing analysis of India's battery testing infrastructure deficit. Current capacity vs. projected demand through 2030, regional distribution of facilities, certification backlog economics, and the opportunity for independent testing infrastructure serving multiple stakeholders.
       </p>
       <a href="#" style="display: inline-block; margin-top: 1rem; color: var(--accent-cyan); text-decoration: none; font-weight: 600;">Read More →</a>
     </div>
@@ -1119,9 +1280,11 @@
     <a href="#contact" class="btn btn-secondary">Subscribe to Fluxera Insights</a>
   </div>
 </section>
+</div>
 
 <!-- Testing Infrastructure Section -->
-<section id="technology">
+<div id="technology" class="tab-content">
+<section id="technology-section">
   <div class="section-header">
     <div class="section-badge">🔬 TESTING CAPABILITIES</div>
     <h2>Comprehensive Testing Infrastructure</h2>
@@ -1180,6 +1343,7 @@
     </div>
   </div>
 </section>
+</div>
 
 <!-- Stats Section -->
 <section>
@@ -1209,7 +1373,8 @@
 </section>
 
 <!-- Future Vision Section -->
-<section>
+<div id="roadmap" class="tab-content">
+<section id="roadmap-section">
   <div class="section-header">
     <div class="section-badge">🚀 ROADMAP</div>
     <h2>Growth Trajectory & Future Vision</h2>
@@ -1223,7 +1388,7 @@
       <div class="timeline-content">
         <div class="timeline-date">2025-2026 | Phase 1</div>
         <h3>Testing Infrastructure Launch</h3>
-        <p>₹1.90 Cr greenfield facility operational in Tumkur/Bengaluru. NABL accreditation achieved. Serving EV OEMs, insurers, and fleet operators with 4-6 week certification timelines. Building India's first battery safety data repository.</p>
+        <p>State-of-the-art facility operational in Tumkur/Bengaluru. NABL accreditation achieved. Serving EV OEMs, insurers, and fleet operators with 4-6 week certification timelines. Building India's first battery safety data repository.</p>
       </div>
     </div>
 
@@ -1244,9 +1409,13 @@
     </div>
   </div>
 </section>
+</div>
+
+</div> <!-- End Home Tab -->
 
 <!-- About Section -->
-<section id="about">
+<div id="aboutTab" class="main-tab-content" style="display: none;">
+<section id="about-section">
   <div class="section-header">
     <div class="section-badge">🏢 ABOUT FLUXERA</div>
     <h2>About Fluxera Energy</h2>
@@ -1285,6 +1454,7 @@
     </div>
   </div>
 </section>
+</div> <!-- End About Tab -->
 
 <!-- Why Choose Fluxera Section -->
 <section>
@@ -1327,13 +1497,14 @@
     <div class="card">
       <div class="card-icon">💼</div>
       <h3>Capital Efficiency</h3>
-      <p>₹1.90 Cr greenfield investment delivering immediate certification capacity and long-term data infrastructure value. Asset-light digital intelligence layer with high-margin revenue potential as data scales.</p>
+      <p>Optimized infrastructure delivering immediate certification capacity and long-term data infrastructure value. Asset-light digital intelligence layer with high-margin revenue potential as data scales.</p>
     </div>
   </div>
 </section>
 
 <!-- Contact Section -->
-<section id="contact">
+<div id="contactTab" class="main-tab-content" style="display: none;">
+<section id="contact-section">
   <div class="section-header">
     <div class="section-badge">📧 GET IN TOUCH</div>
     <h2>Contact Us</h2>
@@ -1379,6 +1550,9 @@
     <a href="mailto:info@fluxeraenergy.com?subject=Demo Request" class="btn btn-primary">Request a Demo</a>
   </div>
 </section>
+</div> <!-- End Contact Tab -->
+
+</div> <!-- End Main Content -->
 
 <!-- Footer -->
 <footer>
@@ -1403,7 +1577,7 @@
       <p>© 2025-2026 Fluxera Energy Private Limited. All rights reserved.</p>
       <p style="margin-top: 0.5rem;">Tumakuru/Bengaluru, Karnataka, India</p>
       <p style="margin-top: 1rem; font-size: 0.8rem;">
-        Battery & Grid Energy Safety Infrastructure Platform | ₹1.90 Cr Greenfield Investment
+        Battery & Grid Energy Safety Infrastructure Platform
       </p>
       <p style="margin-top: 0.5rem; font-size: 0.8rem;">
         Independent testing, data intelligence, compliance readiness, and risk assessment for India's energy transition.
@@ -1413,17 +1587,69 @@
 </footer>
 
 <script>
-  // Smooth scrolling for navigation links
+  // Main tab navigation (Home, About, Contact)
+  function showTab(tabName) {
+    // Hide all main tabs
+    const mainTabs = document.querySelectorAll('.main-tab-content');
+    mainTabs.forEach(tab => tab.style.display = 'none');
+    
+    // Show selected tab
+    const selectedTab = document.getElementById(tabName + 'Tab');
+    if (selectedTab) {
+      selectedTab.style.display = 'block';
+    }
+    
+    // Show/hide sub-navigation based on tab
+    const tabNav = document.getElementById('tabNav');
+    if (tabName === 'home') {
+      tabNav.style.display = 'block';
+      showSection('overview'); // Show first section by default
+    } else {
+      tabNav.style.display = 'none';
+    }
+    
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Update active state in main nav
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.style.color = 'var(--text-secondary)';
+    });
+  }
+
+  // Section navigation (Platform, Verticals, etc.)
+  function showSection(sectionName) {
+    // Hide all tab contents
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => content.classList.remove('active'));
+    
+    // Show selected section
+    const selectedSection = document.getElementById(sectionName);
+    if (selectedSection) {
+      selectedSection.classList.add('active');
+    }
+    
+    // Update active state of buttons
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    // Scroll to content area
+    const tabNav = document.getElementById('tabNav');
+    if (tabNav) {
+      const offsetTop = tabNav.offsetTop + tabNav.offsetHeight;
+      window.scrollTo({ top: offsetTop - 20, behavior: 'smooth' });
+    }
+  }
+
+  // Smooth scrolling for navigation links (legacy support)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        const offsetTop = target.offsetTop - 80;
-        window.scrollTo({
-          top: offsetTop,
-          behavior: 'smooth'
-        });
+      const href = this.getAttribute('href');
+      if (href === '#home' || href === '#about' || href === '#contact') {
+        e.preventDefault();
+        const tabName = href.substring(1);
+        showTab(tabName);
       }
     });
   });
@@ -1461,6 +1687,11 @@
       nav.style.background = 'rgba(10, 14, 39, 0.95)';
       nav.style.boxShadow = 'none';
     }
+  });
+
+  // Initialize: Show home tab by default
+  window.addEventListener('DOMContentLoaded', () => {
+    showTab('home');
   });
 </script>
 
