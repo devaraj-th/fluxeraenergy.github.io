@@ -1,0 +1,9 @@
+# Fluxera Energy - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://fluxeraenergy.com/sitemap.xml
+
+# Crawl-delay (optional, in seconds)
+Crawl-delay: 10
