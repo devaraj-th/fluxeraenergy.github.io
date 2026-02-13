@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infrastructure Solutions | Fluxera Energy</title>
+  <meta name="description" content="Safety infrastructure systems and fluid infrastructure solutions for BESS projects. HDPE, PPR, SS piping supply and installation.">
+  <link rel="icon" type="image/jpeg" href="fluxera.jpeg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="fluxera.jpeg" alt="Fluxera">
+      <span>Fluxera Energy</span>
+    </a>
+    <button class="mobile-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="intelligence.html">Intelligence</a>
+      <a href="compliance.html">Compliance</a>
+      <a href="infrastructure.html" class="active">Infrastructure</a>
+      <a href="industries.html">Industries</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Infrastructure Solutions</h1>
+    <p>Safety systems and fluid infrastructure for operational BESS projects. We don't just provide reports—we deliver and install.</p>
+  </div>
+</section>
+
+<section class="content-section" id="safety">
+  <div class="container">
+    <h2>Safety Infrastructure</h2>
+    <p style="color: var(--gray-600); margin-bottom: 32px;">Critical safety systems for battery energy storage facilities.</p>
+    
+    <div class="content-grid three">
+      <div class="feature-card">
+        <h4>Fire Suppression</h4>
+        <p>Distribution of fire suppression systems designed for lithium-ion battery environments.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Thermal Management</h4>
+        <p>Cooling infrastructure and thermal runaway mitigation systems.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Monitoring Systems</h4>
+        <p>Gas detection, temperature monitoring, and safety alert systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section alt" id="fluid">
+  <div class="container">
+    <h2>Fluid Infrastructure</h2>
+    <p style="color: var(--gray-600); margin-bottom: 32px;">Complete fluid handling solutions for energy storage and industrial facilities.</p>
+    
+    <div class="content-grid">
+      <div>
+        <h3 style="margin-bottom: 16px;">Piping Solutions</h3>
+        <div class="list-section">
+          <ul>
+            <li>HDPE (High-Density Polyethylene) piping</li>
+            <li>PPR (Polypropylene Random) systems</li>
+            <li>CI (Cast Iron) piping</li>
+            <li>MS (Mild Steel) piping</li>
+            <li>SS (Stainless Steel) piping</li>
+            <li>Carbon steel piping systems</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 16px;">Services</h3>
+        <div class="list-section">
+          <ul>
+            <li>Pipe routing design</li>
+            <li>Material procurement</li>
+            <li>Fabrication support</li>
+            <li>Installation supervision</li>
+            <li>Pressure testing</li>
+            <li>Commissioning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section" id="piping">
+  <div class="container">
+    <h2>Project Execution</h2>
+    <p style="color: var(--gray-600); margin-bottom: 32px;">End-to-end infrastructure delivery for energy storage projects.</p>
+    
+    <div class="content-grid three">
+      <div class="feature-card">
+        <h4>Design</h4>
+        <p>Engineering design, routing optimization, and material specification.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Supply</h4>
+        <p>Material procurement, quality control, and logistics coordination.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Installation</h4>
+        <p>On-site supervision, installation support, and quality assurance.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Testing</h4>
+        <p>Pressure testing, leak detection, and system validation.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Commissioning</h4>
+        <p>System startup, performance verification, and handover documentation.</p>
+      </div>
+      <div class="feature-card">
+        <h4>Support</h4>
+        <p>Technical support, maintenance guidance, and spare parts supply.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Infrastructure for Your Project</h2>
+    <p>Get safety systems and fluid infrastructure for your BESS installation.</p>
+    <a href="contact.html" class="btn-primary">Contact Us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">
+        <img src="fluxera.jpeg" alt="Fluxera">
+        <span>Fluxera Energy</span>
+      </a>
+      <p>Safe and intelligent infrastructure for energy storage systems.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h5>Capabilities</h5>
+        <a href="intelligence.html">Intelligence</a>
+        <a href="compliance.html">Compliance</a>
+        <a href="infrastructure.html">Infrastructure</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="industries.html">Industries</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Fluxera Energy Private Limited. Tumakuru, Karnataka, India.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('active');
+  document.querySelector('.mobile-toggle').classList.toggle('active');
+}
+</script>
+</body>
+</html>
