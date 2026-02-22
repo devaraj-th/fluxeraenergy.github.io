@@ -3,17 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Fluxera Energy | Get Started</title>
-  <meta name="description" content="Contact Fluxera for energy storage intelligence reports, compliance infrastructure, and safety systems. Tumakuru, Karnataka, India.">
+  <title>Contact Fluxera Energy | Founding Partner Consultation & BESS Project Enquiries</title>
+  <meta name="description" content="Contact Fluxera Energy for a Founding Partner Consultation, Pre-Bid Intelligence Brief, Compliance Readiness Review, or Infrastructure Quote for your BESS project.">
   <link rel="icon" type="image/jpeg" href="fluxera.jpeg">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contact-form {
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.07);
+    }
+    .contact-form .form-group {
+      margin-bottom: 20px;
+    }
+    .contact-form label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 4px;
+      font-size: 15px;
+      font-family: inherit;
+      color: var(--gray-800);
+      background: var(--gray-50);
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--teal);
+      background: white;
+    }
+    .contact-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .contact-form button[type="submit"] {
+      width: 100%;
+      padding: 15px 32px;
+      background: var(--teal);
+      color: var(--black);
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .contact-form button[type="submit"]:hover {
+      background: var(--teal-dark);
+      transform: translateY(-1px);
+    }
+    .contact-info-item {
+      display: flex;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .contact-info-item:last-child { border-bottom: none; }
+    .contact-info-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--teal-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--teal);
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .success-message {
+      display: none;
+      background: var(--teal-light);
+      border: 1px solid rgba(0,198,184,0.4);
+      border-radius: 6px;
+      padding: 24px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .success-message h3 { color: var(--navy); margin-bottom: 8px; }
+    .success-message p { color: var(--gray-600); font-size:14px; }
+    @media (max-width: 768px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-form { padding: 28px 20px; }
+    }
+  </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-container">
     <a href="index.html" class="logo">
-      <img src="fluxera.jpeg" alt="Fluxera">
+      <img src="fluxera.jpeg" alt="Fluxera Energy">
       <span>Fluxera Energy</span>
     </a>
     <button class="mobile-toggle" onclick="toggleMenu()">
@@ -31,112 +134,112 @@
   </div>
 </nav>
 
-<section class="page-hero">
+<section class="page-hero" style="padding-bottom:60px;">
   <div class="container">
-    <h1>Contact Fluxera Energy</h1>
-    <p>Get in touch to discuss your energy storage infrastructure needs. Intelligence reports, compliance support, or physical infrastructure solutions.</p>
+    <h1>Let's Talk About Your Project</h1>
+    <p>Whether you're evaluating vendors for a BESS procurement, managing a compliance programme, scoping physical infrastructure, or exploring the Founding Partner programme — the right first step is a direct conversation with our team.</p>
   </div>
 </section>
 
-<section class="content-section">
+<section class="content-section" style="padding-top:0;">
   <div class="container">
-    
-    <!-- Success Message -->
-    <div id="success-message" style="display: none; background: #e8f5e9; border: 2px solid #4caf50; padding: 24px; border-radius: 4px; margin-bottom: 32px; text-align: center;">
-      <h3 style="color: #2e7d32; margin-bottom: 8px; font-size: 20px;">✓ Message Sent Successfully!</h3>
-      <p style="color: #1b5e20; font-size: 15px;">Thank you for contacting Fluxera Energy. We'll respond to your inquiry within 24 business hours.</p>
-    </div>
-    
-    <div class="content-grid">
-      <div>
-        <h2>Get Started</h2>
-        <p style="color: var(--gray-600); margin-bottom: 24px;">Contact us to discuss how Fluxera's integrated infrastructure solutions can support your energy storage projects.</p>
-        
-        <div style="background: var(--gray-100); padding: 20px; border-radius: 4px; margin-bottom: 32px; border-left: 3px solid var(--black);">
-          <h3 style="font-size: 16px; margin-bottom: 12px; font-weight: 600;">Email Us Directly</h3>
-          <p style="font-size: 15px; color: var(--gray-600); margin-bottom: 8px;">For immediate inquiries:</p>
-          <a href="mailto:info@fluxeraenergy.com" style="font-size: 18px; font-weight: 600; color: var(--black); text-decoration: none;">info@fluxeraenergy.com</a>
-          <p style="font-size: 13px; color: var(--gray-600); margin-top: 8px;">We typically respond within 24 business hours.</p>
+    <div class="contact-layout">
+
+      <!-- FORM -->
+      <div class="reveal">
+        <div id="success-msg" class="success-message">
+          <h3>Message Received</h3>
+          <p>Thank you for getting in touch. We'll respond within one business day.<br>For urgent enquiries: <a href="mailto:info@fluxeraenergy.com" style="color:var(--teal);">info@fluxeraenergy.com</a></p>
         </div>
-        
-        <h3 style="font-size: 18px; margin-bottom: 16px;">What We Can Help With</h3>
-        <ul style="list-style: none;">
-          <li style="padding: 8px 0; border-bottom: 1px solid var(--gray-200);">Pre-bid intelligence reports</li>
-          <li style="padding: 8px 0; border-bottom: 1px solid var(--gray-200);">Post-bid performance analytics</li>
-          <li style="padding: 8px 0; border-bottom: 1px solid var(--gray-200);">Battery testing coordination</li>
-          <li style="padding: 8px 0; border-bottom: 1px solid var(--gray-200);">Certification support</li>
-          <li style="padding: 8px 0; border-bottom: 1px solid var(--gray-200);">Safety infrastructure systems</li>
-          <li style="padding: 8px 0; border-bottom: 1px solid var(--gray-200);">Fluid infrastructure solutions</li>
-          <li style="padding: 8px 0;">General inquiries</li>
-        </ul>
+        <div class="contact-form">
+          <h3 style="margin-bottom:24px; color:var(--navy);">Send Us a Message</h3>
+          <form name="contact" data-netlify="true" netlify-honeypot="bot-field" action="/contact.html?success=true" method="POST">
+            <input type="hidden" name="form-name" value="contact">
+            <div style="display:none;">
+              <label>Don't fill this out: <input name="bot-field"></label>
+            </div>
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" placeholder="Full name" required>
+            </div>
+            <div class="form-group">
+              <label for="company">Company / Organisation *</label>
+              <input type="text" id="company" name="company" placeholder="Organisation name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Work Email *</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98000 00000">
+            </div>
+            <div class="form-group">
+              <label for="service">What can we help with? *</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="founding-partner">Founding Partner Program — apply to join</option>
+                <option value="pre-bid-intelligence">Pre-Bid Intelligence Brief</option>
+                <option value="compliance-review">Compliance Readiness Review (free)</option>
+                <option value="infrastructure-quote">Infrastructure Quote (suppression / piping / thermal)</option>
+                <option value="post-bid-monitoring">Post-Contract Vendor Monitoring</option>
+                <option value="ecosystem-intelligence">Ecosystem Intelligence Report</option>
+                <option value="hydrogen">Hydrogen Infrastructure — register interest</option>
+                <option value="general">General enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell us about your project *</label>
+              <textarea id="message" name="message" placeholder="Project type, scale, location, timeline, and what you're trying to solve..." required></textarea>
+            </div>
+            <button type="submit">Send Message →</button>
+          </form>
+        </div>
       </div>
-      
-      <div>
-        <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact.html?success=true">
-          <input type="hidden" name="form-name" value="contact">
-          <input type="hidden" name="send-to" value="info@fluxeraenergy.com">
-          <div style="display: none;">
-            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-          </div>
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="company">Company</label>
-            <input type="text" id="company" name="company" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone">
-          </div>
-          
-          <div class="form-group">
-            <label for="service">Service Interest</label>
-            <select id="service" name="service" style="width: 100%; padding: 12px; font-size: 16px; border: 1px solid var(--gray-200); border-radius: 4px;">
-              <option value="">Select a service</option>
-              <option value="intelligence">Energy Storage Intelligence</option>
-              <option value="compliance">Trust & Compliance Infrastructure</option>
-              <option value="infrastructure">Infrastructure Solutions</option>
-              <option value="general">General Inquiry</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          
-          <button type="submit" class="btn-primary" style="width: 100%; cursor: pointer; border: none;">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="content-section alt">
-  <div class="container">
-    <h2>Company Information</h2>
-    <div class="content-grid three">
-      <div>
-        <h3 style="font-size: 18px; margin-bottom: 12px;">Contact</h3>
-        <p style="color: var(--gray-600); margin-bottom: 8px;"><strong>Email:</strong><br><a href="mailto:info@fluxeraenergy.com" style="color: var(--black); text-decoration: none; font-weight: 600;">info@fluxeraenergy.com</a></p>
-        <p style="color: var(--gray-600); margin-top: 16px;"><strong>Location:</strong><br>Fluxera Energy Private Limited<br>Tumakuru, Karnataka<br>India</p>
-      </div>
-      <div>
-        <h3 style="font-size: 18px; margin-bottom: 12px;">Business Hours</h3>
-        <p style="color: var(--gray-600);">Monday - Friday<br>9:00 AM - 6:00 PM IST<br>Closed on weekends</p>
-      </div>
-      <div>
-        <h3 style="font-size: 18px; margin-bottom: 12px;">Response Time</h3>
-        <p style="color: var(--gray-600);">We typically respond to inquiries within 24 business hours.</p>
+      <!-- CONTACT INFO -->
+      <div class="reveal">
+        <h3 style="color:var(--navy); margin-bottom:8px;">What happens next</h3>
+        <p style="color:var(--gray-600); margin-bottom:32px; line-height:1.7;">We read every enquiry personally and respond within one business day. For complex projects, we'll propose a 30-minute scoping call to understand your situation before suggesting how we can help.</p>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">@</div>
+          <div>
+            <div style="font-size:13px; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px;">Email</div>
+            <a href="mailto:info@fluxeraenergy.com" style="color:var(--teal); font-weight:600; text-decoration:none; font-size:15px;">info@fluxeraenergy.com</a>
+            <p style="color:var(--gray-600); font-size:13px; margin-top:4px;">Response within one business day</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">in</div>
+          <div>
+            <div style="font-size:13px; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px;">LinkedIn</div>
+            <a href="https://linkedin.com/company/fluxera-energy" target="_blank" rel="noopener" style="color:var(--teal); font-weight:600; text-decoration:none; font-size:15px;">linkedin.com/company/fluxera-energy</a>
+            <p style="color:var(--gray-600); font-size:13px; margin-top:4px;">Follow our thinking on BESS infrastructure</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">📍</div>
+          <div>
+            <div style="font-size:13px; font-weight:700; color:var(--navy); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px;">Location</div>
+            <p style="color:var(--gray-800); font-size:15px; font-weight:500; margin-bottom:4px;">Tumakuru, Karnataka, India</p>
+            <p style="color:var(--gray-600); font-size:13px;">Serving projects across India and internationally</p>
+          </div>
+        </div>
+
+        <div style="background:var(--navy); color:white; padding:28px; border-radius:6px; margin-top:32px;">
+          <div style="font-size:13px; font-weight:700; color:var(--teal); margin-bottom:12px; text-transform:uppercase; letter-spacing:0.08em;">Founding Partner Program</div>
+          <p style="color:rgba(255,255,255,0.75); font-size:14px; line-height:1.7; margin-bottom:16px;">We're accepting our first five Founding Partner engagements — organisations with a BESS project in the near-term pipeline who want to work closely with our team. Founding Partners receive embedded engagement, priority access, and commercial terms that reflect the founding-stage relationship.</p>
+          <p style="color:rgba(255,255,255,0.5); font-size:13px;">Select "Founding Partner Program" in the form above to start that conversation.</p>
+        </div>
+
+        <div style="background:var(--gray-50); border:1px solid var(--gray-200); padding:28px; border-radius:6px; margin-top:16px;">
+          <div style="font-size:13px; font-weight:700; color:var(--navy); margin-bottom:12px; text-transform:uppercase; letter-spacing:0.08em;">Free Compliance Readiness Review</div>
+          <p style="color:var(--gray-600); font-size:14px; line-height:1.7; margin-bottom:16px;">A free 30-minute structured review of your current BESS project's compliance status — identifying gaps, sequence errors, and missing certifications before they affect your timeline. No engagement required.</p>
+          <p style="color:var(--gray-600); font-size:13px;">Select "Compliance Readiness Review" in the form above.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -145,17 +248,12 @@
 <footer>
   <div class="footer-content">
     <div class="footer-brand">
-      <a href="index.html" class="footer-logo">
-        <img src="fluxera.jpeg" alt="Fluxera">
-        <span>Fluxera Energy</span>
-      </a>
-      <p>Safe and intelligent infrastructure for energy storage systems.</p>
-      <p style="margin-top: 12px; font-size: 14px;">
-        <a href="mailto:info@fluxeraenergy.com" style="color: var(--gray-400); text-decoration: none; transition: color 0.2s;">info@fluxeraenergy.com</a>
-      </p>
-      <div style="margin-top: 16px;">
-        <a href="https://linkedin.com/company/fluxera-energy" target="_blank" rel="noopener" style="display: inline-block; padding: 8px 16px; background: var(--gray-800); color: var(--white); text-decoration: none; border-radius: 4px; font-size: 14px; font-weight: 500;">Follow on LinkedIn</a>
-      </div>
+      <a href="index.html" class="footer-logo"><img src="fluxera.jpeg" alt="Fluxera Energy"><span>Fluxera Energy</span></a>
+      <p class="footer-tagline">The infrastructure layer your BESS project is missing.</p>
+      <p>Energy storage infrastructure specialist — intelligence, compliance, and safety systems for battery energy storage systems in India and beyond.</p>
+      <div class="footer-belief"><p>We believe infrastructure failures in energy storage are not accidents — they are the predictable result of skipping the work that Fluxera exists to do.</p></div>
+      <p style="margin-top:16px; font-size:14px;"><a href="mailto:info@fluxeraenergy.com" style="color:var(--teal); text-decoration:none; font-weight:600;">info@fluxeraenergy.com</a></p>
+      <div style="margin-top:14px;"><a href="https://linkedin.com/company/fluxera-energy" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; padding:8px 16px; background:rgba(255,255,255,0.07); color:var(--white); text-decoration:none; border-radius:4px; font-size:14px; font-weight:500; border:1px solid rgba(255,255,255,0.12);">Follow our thinking on LinkedIn →</a></div>
     </div>
     <div class="footer-links">
       <div class="footer-col">
@@ -167,21 +265,24 @@
       <div class="footer-col">
         <h5>Company</h5>
         <a href="industries.html">Industries</a>
-        <a href="about.html">About</a>
+        <a href="about.html">About & Founding Story</a>
         <a href="contact.html">Contact</a>
       </div>
       <div class="footer-col">
-        <h5>Resources</h5>
-        <a href="contact.html">Request Intelligence Report</a>
-        <a href="contact.html">Testing Coordination</a>
+        <h5>Work With Us</h5>
+        <a href="contact.html">Founding Partner Program</a>
+        <a href="contact.html">Pre-Bid Intelligence Brief</a>
+        <a href="contact.html">Compliance Readiness Review</a>
         <a href="contact.html">Infrastructure Quote</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Fluxera Energy Private Limited. Tumakuru, Karnataka, India.</p>
+    <p>© 2026 Fluxera Energy Private Limited. Tumakuru, Karnataka, India. &nbsp;|&nbsp; <a href="mailto:info@fluxeraenergy.com" style="color:rgba(255,255,255,0.3); text-decoration:none;">info@fluxeraenergy.com</a></p>
   </div>
 </footer>
+
+<div class="mobile-cta-sticky"><a href="contact.html">Book a Call →</a></div>
 
 <script>
 function toggleMenu() {
@@ -189,16 +290,19 @@ function toggleMenu() {
   document.querySelector('.mobile-toggle').classList.toggle('active');
 }
 
-// Show success message if form was submitted
+// Show success message if redirected after form submission
 if (window.location.search.includes('success=true')) {
-  document.getElementById('success-message').style.display = 'block';
-  // Scroll to success message
-  document.getElementById('success-message').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  // Remove success parameter from URL after showing message
-  setTimeout(() => {
-    window.history.replaceState({}, document.title, window.location.pathname);
-  }, 100);
+  const msg = document.getElementById('success-msg');
+  if (msg) {
+    msg.style.display = 'block';
+    window.scrollTo({ top: msg.offsetTop - 100, behavior: 'smooth' });
+  }
 }
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>
