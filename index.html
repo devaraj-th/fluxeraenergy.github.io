@@ -386,6 +386,14 @@ function toggleMenu() {
   document.querySelector('.mobile-toggle').classList.toggle('active');
 }
 
+// Close menu when any nav link is tapped on mobile
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('active');
+    document.querySelector('.mobile-toggle').classList.remove('active');
+  });
+});
+
 // Scroll reveal
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {

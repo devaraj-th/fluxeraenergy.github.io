@@ -290,6 +290,14 @@ function toggleMenu() {
   document.querySelector('.mobile-toggle').classList.toggle('active');
 }
 
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('active');
+    document.querySelector('.mobile-toggle').classList.remove('active');
+  });
+});
+
+
 // Show success message if redirected after form submission
 if (window.location.search.includes('success=true')) {
   const msg = document.getElementById('success-msg');

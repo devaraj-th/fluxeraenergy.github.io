@@ -228,6 +228,14 @@ function toggleMenu() {
   document.querySelector('.nav-links').classList.toggle('active');
   document.querySelector('.mobile-toggle').classList.toggle('active');
 }
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('active');
+    document.querySelector('.mobile-toggle').classList.remove('active');
+  });
+});
+
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
