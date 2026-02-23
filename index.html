@@ -411,24 +411,34 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
-// Dropdown — click to open/close on ALL screen sizes, click outside to close
+// Dropdown — click-based, works on desktop & mobile
 const dropdowns = document.querySelectorAll('.nav-dropdown');
 dropdowns.forEach(dropdown => {
   const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+  const menu   = dropdown.querySelector('.nav-dropdown-menu');
+
+  // Toggle on button click
   toggle.addEventListener('click', (e) => {
     e.stopPropagation();
     const isOpen = dropdown.classList.contains('open');
-    // Close all dropdowns first
     dropdowns.forEach(d => d.classList.remove('open'));
-    // Toggle current
     if (!isOpen) dropdown.classList.add('open');
   });
+
+  // Stop clicks inside the menu from closing it via document handler
+  if (menu) {
+    menu.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
 });
-// Click outside closes dropdown
+
+// Click / tap outside closes all dropdowns
 document.addEventListener('click', () => {
   dropdowns.forEach(d => d.classList.remove('open'));
 });
-// Esc key closes dropdown
+
+// Esc key closes all dropdowns
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') dropdowns.forEach(d => d.classList.remove('open'));
 });
