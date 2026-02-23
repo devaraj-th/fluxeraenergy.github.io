@@ -124,12 +124,29 @@
     </button>
     <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="intelligence.html">Energy Storage Intelligence</a>
-      <a href="compliance.html">Trust & Compliance Infrastructure</a>
-      <a href="infrastructure.html">Infrastructure Solutions</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Capabilities</button>
+        <div class="nav-dropdown-menu">
+          <a href="intelligence.html">
+            <span class="drop-label">Pillar 01</span>
+            <span class="drop-title">Energy Storage Intelligence</span>
+            <span class="drop-desc">Pre-bid reports, vendor benchmarking &amp; ecosystem research</span>
+          </a>
+          <a href="compliance.html">
+            <span class="drop-label">Pillar 02</span>
+            <span class="drop-title">Trust &amp; Compliance Infrastructure</span>
+            <span class="drop-desc">IEC 62619, UL 9540, NFPA 855 &amp; lab coordination</span>
+          </a>
+          <a href="infrastructure.html">
+            <span class="drop-label">Pillar 03</span>
+            <span class="drop-title">Infrastructure Solutions</span>
+            <span class="drop-desc">Fire suppression, thermal management &amp; BESS-grade piping</span>
+          </a>
+        </div>
+      </div>
       <a href="industries.html">Industries</a>
       <a href="about.html">About</a>
-      <a href="contact.html" class="nav-cta active">Contact</a>
+      <a href="contact.html" class="active nav-cta">Contact</a>
     </div>
   </div>
 </nav>
@@ -294,6 +311,14 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     document.querySelector('.nav-links').classList.remove('active');
     document.querySelector('.mobile-toggle').classList.remove('active');
+  });
+});
+
+// Mobile dropdown accordion
+document.querySelectorAll('.nav-dropdown-toggle').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    btn.closest('.nav-dropdown').classList.toggle('open');
   });
 });
 
