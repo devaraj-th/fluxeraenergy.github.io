@@ -1,68 +1,65 @@
-# Fluxera Energy Website
+# Fluxera Website
 
-Enterprise-grade website for Fluxera Energy Private Limited - Safe and Intelligent Infrastructure for Energy Storage Systems.
+AI-first engineering website for Fluxera with Energy business continuity and Innovation Studio expansion.
 
 ## Overview
 
-Fluxera builds integrated infrastructure for battery energy storage systems across the complete project lifecycle—from pre-deployment intelligence and safety validation to physical infrastructure installation and operational compliance support.
+Fluxera is positioned as an Engineering, Artificial Intelligence and Innovation company.
+
+Mission: Engineering Intelligent Infrastructure for the Future.
+
+Tagline: Learn Less. Build More. Deliver Value.
 
 ## Website Structure
 
-### Pages
-- **Home** (`index.html`) - Main landing page with company positioning, capability pillars, project examples, and approach
-- **Energy Storage Intelligence** (`intelligence.html`) - Pre-bid and post-bid intelligence reports, ecosystem insights
-- **Trust & Compliance Infrastructure** (`compliance.html`) - Testing coordination, certification, safety validation
-- **Infrastructure Solutions** (`infrastructure.html`) - Safety systems and fluid infrastructure solutions
-- **Industries** (`industries.html`) - Sectors served: utilities, renewable energy, industrial, EPC, commercial, transportation
-- **About** (`about.html`) - Company information, approach, core expertise
-- **Contact** (`contact.html`) - Contact form with Netlify Forms integration
+### Primary Pages
+- **Home** (`index.html`) - AI-first homepage with Energy continuity and Beyond Energy section
+- **Innovation Studio** (`innovation/index.html`) - Main studio page with fellowships, challenge banner, projects, and timeline
+- **Legacy Studio URL** (`innovation-studio.html`) - Redirects to `/innovation/`
+- **Solutions** (`solutions.html`) - Energy + AI solution index
+- **AI Products** (`ai-products.html`) - Product roadmap and statuses
+- **Resources** (`resources.html`) - Blogs, research, papers, GitHub, YouTube, podcasts
+- **Careers** (`careers.html`) - Founding Intern, Builder Fellowship, Mentor, Partnerships
+- **Energy Pages (unchanged core)** (`intelligence.html`, `compliance.html`, `infrastructure.html`, `industries.html`)
+- **About / Contact** (`about.html`, `contact.html`)
+
+### Shared Config
+- `config.js` stores configurable values (Google Form URL and contact information).
+- `script.js` handles nav behavior, smooth scrolling, reveal animations, counters, and form link injection.
 
 ## Key Features
 
 ✅ **Enterprise-Grade Design** - Clean, professional aesthetic similar to Siemens Energy  
 ✅ **Mobile Responsive** - Fully responsive across all devices  
 ✅ **SEO Optimized** - Proper meta tags, semantic HTML, sitemap.xml  
-✅ **Contact Form** - Netlify Forms integration (spam protection included)  
-✅ **Case Studies** - Real project examples demonstrating capabilities  
-✅ **Social Proof** - LinkedIn integration and compliance standards badges  
-✅ **Visual Approach** - 4-step process diagram showing integrated infrastructure  
-✅ **Core Expertise** - Detailed technical competencies on About page  
+✅ **AI-first Positioning + Energy Continuity**  
+✅ **Innovation Studio at `/innovation/`**  
+✅ **Configurable Google Form URL from one place (`config.js`)**  
+✅ **Animated counters, smooth scrolling, and reveal effects**  
+✅ **Responsive premium cards and project status system**  
 
 ## Deployment
 
 ### GitHub Pages (Current Setup)
 The website is configured to deploy via GitHub Pages at `https://fluxeraenergy.github.io`
 
-### Netlify Deployment (Recommended for Forms)
+### Configuration Updates
 
-1. **Connect Repository to Netlify:**
-   - Go to [Netlify](https://netlify.com) and sign in
-   - Click "Add new site" → "Import an existing project"
-   - Connect to GitHub and select `fluxeraenergy.github.io` repository
-   - Click "Deploy site"
+Update all Google Form redirects in one place:
 
-2. **Enable Form Handling:**
-   - Forms are already configured with `data-netlify="true"`
-   - Netlify will automatically detect and enable form submissions
-   - View submissions in Netlify Dashboard → Forms
+```js
+// config.js
+window.FLUXERA_CONFIG = {
+  googleFormUrl: "<your-google-form-url>"
+};
+```
 
-3. **Custom Domain (Optional):**
-   - In Netlify Dashboard → Domain settings
-   - Add custom domain: `fluxeraenergy.com`
-   - Update `CNAME` file with your custom domain
-   - Configure DNS records as provided by Netlify
+### Contact Information
 
-### Contact Form Setup
-
-The contact form uses Netlify Forms with spam protection:
-- Anti-spam honeypot field included
-- Form submissions viewable in Netlify Dashboard
-- Email notifications can be configured in Netlify settings
-
-**Note:** If not using Netlify, replace form with:
-- Formspree integration
-- Custom backend API
-- Email service (e.g., EmailJS)
+- Location: Tumakuru, Karnataka, India
+- Website: https://fluxeraenergy.com
+- Email: fluxeraenergy@gmail.com
+- Phone: +91 8088372814
 
 ## Assets
 
@@ -94,20 +91,18 @@ Update this URL once the LinkedIn company page is live.
 
 ## Future Enhancements
 
-- Add blog/insights section for thought leadership
-- Implement analytics (Google Analytics, Plausible, etc.)
-- Add more case studies as projects complete
-- Integrate customer testimonials
-- Add downloadable resources (whitepapers, datasheets)
-- Implement cookie consent banner if required
+- Add dedicated blog detail templates with RSS feed
+- Add JSON-LD structured data for Organization and WebSite entities
+- Add case study pages with filters by domain and status
+- Add lightweight analytics dashboard
 
 ## Technical Stack
 
 - HTML5
 - CSS3 (Custom, no frameworks)
 - Vanilla JavaScript (minimal, for mobile menu)
-- Netlify Forms for contact form
-- GitHub Pages / Netlify for hosting
+- GitHub Pages hosting
+- Central config-based external form routing
 
 ## Browser Support
 
@@ -119,10 +114,10 @@ Update this URL once the LinkedIn company page is live.
 
 ## Company Information
 
-**Fluxera Energy Private Limited**  
+**Fluxera**  
 Tumakuru, Karnataka, India  
 Founded: 2026
 
 ---
 
-© 2026 Fluxera Energy Private Limited. All rights reserved.
+© 2026 Fluxera. All rights reserved.

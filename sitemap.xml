@@ -2,41 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://fluxeraenergy.com/</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://fluxeraenergy.com/intelligence.html</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fluxeraenergy.com/compliance.html</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fluxeraenergy.com/infrastructure.html</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://fluxeraenergy.com/industries.html</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://fluxeraenergy.com/about.html</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://fluxeraenergy.com/contact.html</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://fluxeraenergy.com/innovation/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://fluxeraenergy.com/innovation-studio.html</loc>
+    <lastmod>2026-07-13</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://fluxeraenergy.com/solutions.html</loc>
+    <lastmod>2026-07-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fluxeraenergy.com/ai-products.html</loc>
+    <lastmod>2026-07-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fluxeraenergy.com/resources.html</loc>
+    <lastmod>2026-07-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fluxeraenergy.com/careers.html</loc>
     <lastmod>2026-07-13</lastmod>
     <priority>0.8</priority>
   </url>
