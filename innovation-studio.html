@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fluxera Innovation Studio | Apply and Share Your BESS Ideas</title>
+  <meta name="description" content="Join Fluxera Innovation Studio to collaborate on practical, implementation-ready ideas for battery energy storage projects.">
+  <link rel="icon" type="image/jpeg" href="fluxera.jpeg">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .studio-section {
+      padding: 80px 0;
+      background: var(--gray-50);
+    }
+    .studio-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .studio-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+    .studio-card h2 {
+      font-size: 28px;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+    .studio-card p {
+      color: var(--gray-600);
+      line-height: 1.75;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+    .studio-points {
+      list-style: none;
+      margin-top: 16px;
+      display: grid;
+      gap: 10px;
+    }
+    .studio-points li {
+      font-size: 14px;
+      color: var(--gray-800);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .studio-points li::before {
+      content: ">";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--teal);
+      font-weight: 700;
+    }
+    .studio-actions {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .studio-frame-wrap {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+    .studio-frame-wrap iframe {
+      width: 100%;
+      min-height: 1080px;
+      border: 0;
+      display: block;
+      background: var(--white);
+    }
+    @media (max-width: 1024px) {
+      .studio-layout {
+        grid-template-columns: 1fr;
+      }
+      .studio-frame-wrap iframe {
+        min-height: 980px;
+      }
+    }
+    @media (max-width: 768px) {
+      .studio-section {
+        padding: 56px 0;
+      }
+      .studio-card {
+        padding: 22px;
+      }
+      .studio-card h2 {
+        font-size: 24px;
+      }
+      .studio-frame-wrap iframe {
+        min-height: 920px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="fluxera.jpeg" alt="Fluxera Energy">
+      <span>Fluxera Energy</span>
+    </a>
+    <button class="mobile-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle">Capabilities</button>
+        <div class="nav-dropdown-menu">
+          <a href="intelligence.html">
+            <span class="drop-label">Pillar 01</span>
+            <span class="drop-title">Energy Storage Intelligence</span>
+            <span class="drop-desc">Pre-bid reports, vendor benchmarking &amp; ecosystem research</span>
+          </a>
+          <a href="compliance.html">
+            <span class="drop-label">Pillar 02</span>
+            <span class="drop-title">Trust &amp; Compliance Infrastructure</span>
+            <span class="drop-desc">IEC 62619, UL 9540, NFPA 855 &amp; lab coordination</span>
+          </a>
+          <a href="infrastructure.html">
+            <span class="drop-label">Pillar 03</span>
+            <span class="drop-title">Infrastructure Solutions</span>
+            <span class="drop-desc">Fire suppression, thermal management &amp; BESS-grade piping</span>
+          </a>
+        </div>
+      </div>
+      <a href="industries.html">Industries</a>
+      <a href="about.html">About</a>
+      <a href="innovation-studio.html" class="active">Innovation Studio</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Fluxera Innovation Studio</h1>
+    <p>A dedicated space for developers, EPC teams, utilities, and researchers to share high-potential ideas for safer, stronger, and more bankable BESS infrastructure.</p>
+  </div>
+</section>
+
+<section class="studio-section">
+  <div class="container">
+    <div class="studio-layout">
+      <div class="studio-card reveal">
+        <h2>Submit Your Idea or Collaboration Request</h2>
+        <p>Use this form to tell us about your concept, pilot proposal, technology validation need, or implementation challenge in energy storage infrastructure.</p>
+        <p>We review every submission and follow up with high-fit opportunities for pilots, research, or scoped execution support.</p>
+        <ul class="studio-points">
+          <li>Battery safety and suppression innovation</li>
+          <li>Thermal management and fluid infrastructure concepts</li>
+          <li>Compliance process improvements for faster deployment</li>
+          <li>Data-driven vendor qualification and risk analysis ideas</li>
+        </ul>
+        <div class="studio-actions">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXMw9KENK2IyNcqS3uYYwWV_K7MLFCENMBn2WLb1UGMHGtiw/viewform?usp=header" target="_blank" rel="noopener" class="btn-secondary">Open Form in New Tab</a>
+          <a href="contact.html" class="btn-primary">Need a Direct Call Instead?</a>
+        </div>
+      </div>
+
+      <div class="studio-frame-wrap reveal">
+        <iframe title="Fluxera Innovation Studio Form" src="https://docs.google.com/forms/d/e/1FAIpQLSfXMw9KENK2IyNcqS3uYYwWV_K7MLFCENMBn2WLb1UGMHGtiw/viewform?embedded=true" loading="lazy">Loading…</iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo"><img src="fluxera.jpeg" alt="Fluxera Energy"><span>Fluxera Energy</span></a>
+      <p class="footer-tagline">Intelligent infrastructure for energy storage.</p>
+      <p>Energy storage infrastructure specialist - intelligence, compliance, and safety systems for battery energy storage systems in India and beyond.</p>
+      <div class="footer-belief"><p>We believe infrastructure failures in energy storage are not accidents - they are the predictable result of skipping the work that Fluxera exists to do.</p></div>
+      <p style="margin-top:16px; font-size:14px;"><a href="mailto:info@fluxeraenergy.com" style="color:var(--teal); text-decoration:none; font-weight:600;">info@fluxeraenergy.com</a></p>
+      <div style="margin-top:14px;"><a href="https://linkedin.com/company/fluxera-energy" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; padding:8px 16px; background:rgba(255,255,255,0.07); color:var(--white); text-decoration:none; border-radius:4px; font-size:14px; font-weight:500; border:1px solid rgba(255,255,255,0.12);">Follow our thinking on LinkedIn -&gt;</a></div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h5>Capabilities</h5>
+        <a href="intelligence.html">Energy Storage Intelligence</a>
+        <a href="compliance.html">Trust &amp; Compliance Infrastructure</a>
+        <a href="infrastructure.html">Infrastructure Solutions</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="industries.html">Industries</a>
+        <a href="about.html">About &amp; Founding Story</a>
+        <a href="innovation-studio.html">Innovation Studio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Work With Us</h5>
+        <a href="contact.html">Founding Partner Program</a>
+        <a href="innovation-studio.html">Fluxera Innovation Studio</a>
+        <a href="contact.html">Pre-Bid Intelligence Brief</a>
+        <a href="contact.html">Compliance Readiness Review</a>
+        <a href="contact.html">Infrastructure Quote</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Fluxera Energy Private Limited. Tumakuru, Karnataka, India. &nbsp;|&nbsp; <a href="mailto:info@fluxeraenergy.com" style="color:rgba(255,255,255,0.3); text-decoration:none;">info@fluxeraenergy.com</a></p>
+  </div>
+</footer>
+
+<div class="mobile-cta-sticky"><a href="contact.html">Book a Call -&gt;</a></div>
+
+<script>
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('active');
+  document.querySelector('.mobile-toggle').classList.toggle('active');
+}
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('active');
+    document.querySelector('.mobile-toggle').classList.remove('active');
+  });
+});
+
+const dropdowns = document.querySelectorAll('.nav-dropdown');
+dropdowns.forEach(dropdown => {
+  const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+  const menu   = dropdown.querySelector('.nav-dropdown-menu');
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = dropdown.classList.contains('open');
+    dropdowns.forEach(d => d.classList.remove('open'));
+    if (!isOpen) dropdown.classList.add('open');
+  });
+
+  if (menu) {
+    menu.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
+});
+
+document.addEventListener('click', () => {
+  dropdowns.forEach(d => d.classList.remove('open'));
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') dropdowns.forEach(d => d.classList.remove('open'));
+});
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+</body>
+</html>
