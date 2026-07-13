@@ -15,16 +15,37 @@
     const navLinks = document.querySelector(".nav-links");
     if (!toggle || !navLinks) return;
 
+    function closeMenu() {
+      navLinks.classList.remove("active");
+      toggle.classList.remove("active");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("mobile-menu-open");
+    }
+
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-controls", "site-navigation");
+    if (!navLinks.id) navLinks.id = "site-navigation";
+
     toggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-      toggle.classList.toggle("active");
+      const willOpen = !navLinks.classList.contains("active");
+      navLinks.classList.toggle("active", willOpen);
+      toggle.classList.toggle("active", willOpen);
+      toggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      document.body.classList.toggle("mobile-menu-open", willOpen);
     });
 
     navLinks.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-        toggle.classList.remove("active");
+        closeMenu();
       });
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) closeMenu();
     });
   }
 
