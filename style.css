@@ -82,9 +82,14 @@ h1, h2, h3, h4, .brand, .btn, .top-search input, .nav-cta { font-family: 'Sora',
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  flex: 0 0 28px;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.8);
   filter: drop-shadow(0 7px 10px rgba(13, 110, 251, 0.24));
   transition: transform 0.2s ease, filter 0.2s ease;
 }
