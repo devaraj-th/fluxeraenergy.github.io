@@ -1,21 +1,21 @@
 :root {
-  --bg: #071421;
-  --bg-strong: #020d18;
-  --bg-soft: #0b1b2a;
-  --panel: rgba(12, 24, 34, 0.82);
-  --panel-strong: #0e1e2b;
-  --panel-light: #f3f8fb;
-  --line: rgba(152, 174, 188, 0.2);
-  --line-strong: rgba(140, 214, 228, 0.3);
-  --text: #e7f1f6;
-  --muted: #9db1bf;
-  --deep: #07111a;
-  --primary: #64f2d6;
-  --primary-strong: #2dd0b0;
-  --secondary: #8bb4ff;
-  --warning: #f9ca6d;
-  --danger: #ff7b72;
-  --shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+  --bg: #031b2d;
+  --bg-strong: #010f1d;
+  --bg-soft: #0b2741;
+  --panel: rgba(12, 28, 43, 0.82);
+  --panel-strong: #102b43;
+  --panel-light: #f4f9ff;
+  --line: rgba(169, 198, 230, 0.2);
+  --line-strong: rgba(117, 179, 255, 0.28);
+  --text: #edf6ff;
+  --muted: #a9bdd3;
+  --deep: #0a1d2c;
+  --primary: #0d6efb;
+  --primary-strong: #0b4fc9;
+  --secondary: #7cc4ff;
+  --warning: #f2b947;
+  --danger: #ff7a66;
+  --shadow: 0 30px 80px rgba(3, 17, 32, 0.42);
   --radius: 22px;
   --radius-sm: 14px;
   --container: 1200px;
@@ -29,8 +29,8 @@ body {
   margin: 0;
   font-family: 'Manrope', sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(100, 242, 214, 0.14), transparent 26%),
-    linear-gradient(180deg, #06131d 0%, #0a1b2a 18%, #f6f8fb 18%, #f6f8fb 100%);
+    radial-gradient(circle at top left, rgba(124, 196, 255, 0.22), transparent 25%),
+    linear-gradient(180deg, #021827 0%, #0a233c 18%, #edf4ff 18%, #edf4ff 100%);
   color: var(--deep);
   line-height: 1.5;
 }
@@ -84,10 +84,18 @@ h1, h2, h3, h4, .brand, .btn, .top-search input, .nav-cta { font-family: 'Sora',
   justify-content: center;
   width: 28px;
   height: 28px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #04141d;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #ffffff 0%, #dfeeff 18%, #9cc8ff 40%, #2a7ef0 74%, #0b4fc9 100%);
+  color: #041a2e;
   font-weight: 800;
+  letter-spacing: -0.08em;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow:
+    inset 0 2px 6px rgba(255, 255, 255, 0.9),
+    inset 0 -8px 12px rgba(10, 41, 92, 0.18),
+    0 10px 22px rgba(13, 110, 251, 0.32);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  transform: perspective(600px) rotateX(12deg);
 }
 
 .primary-nav,
@@ -222,8 +230,8 @@ h1, h2, h3, h4, .brand, .btn, .top-search input, .nav-cta { font-family: 'Sora',
 .hero-section {
   padding: 62px 0 32px;
   background:
-    radial-gradient(circle at 10% 15%, rgba(100, 242, 214, 0.16), transparent 20%),
-    linear-gradient(180deg, rgba(5,17,25,1) 0%, rgba(10,24,35,1) 46%, rgba(9,21,31,1) 100%);
+    radial-gradient(circle at 10% 15%, rgba(124, 196, 255, 0.22), transparent 20%),
+    linear-gradient(180deg, rgba(2,20,31,1) 0%, rgba(8,27,42,1) 46%, rgba(8,19,31,1) 100%);
   color: var(--text);
 }
 
@@ -275,8 +283,8 @@ h1, h2, h3, h4, .brand, .btn, .top-search input, .nav-cta { font-family: 'Sora',
 
 .btn-primary {
   background: linear-gradient(135deg, var(--primary), var(--primary-strong));
-  color: #07111a;
-  box-shadow: 0 18px 38px rgba(45, 208, 176, 0.25);
+  color: #f8fbff;
+  box-shadow: 0 18px 38px rgba(13, 110, 251, 0.25);
 }
 
 .btn-secondary {
@@ -319,7 +327,7 @@ h1, h2, h3, h4, .brand, .btn, .top-search input, .nav-cta { font-family: 'Sora',
 .global-search button {
   background: linear-gradient(135deg, var(--primary), var(--primary-strong));
   border: 0;
-  color: #07111a;
+  color: #ffffff;
   border-radius: 12px;
   font-weight: 800;
   padding: 12px 18px;
@@ -370,7 +378,7 @@ h1, h2, h3, h4, .brand, .btn, .top-search input, .nav-cta { font-family: 'Sora',
   height: 10px;
   border-radius: 50%;
   background: var(--primary);
-  box-shadow: 0 0 16px rgba(100,242,214,0.8);
+  box-shadow: 0 0 16px rgba(13,110,251,0.8);
 }
 
 .panel-header p { margin: 0; font-weight: 700; }
@@ -407,7 +415,7 @@ h1, h2, h3, h4, .brand, .btn, .top-search input, .nav-cta { font-family: 'Sora',
 .sparkline span {
   display: block;
   border-radius: 999px 999px 0 0;
-  background: linear-gradient(180deg, rgba(100,242,214,0.95), rgba(100,242,214,0.2));
+  background: linear-gradient(180deg, rgba(92,160,255,0.96), rgba(92,160,255,0.2));
 }
 
 .sparkline span:nth-child(1) { height: 34%; }
@@ -818,9 +826,11 @@ h1, h2, h3, h4, .brand, .btn, .top-search input, .nav-cta { font-family: 'Sora',
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(100,242,214,0.2), rgba(139,180,255,0.2));
+  background: linear-gradient(135deg, rgba(13,110,251,0.14), rgba(124,196,255,0.3));
   color: #0a1d2d;
   font-weight: 800;
+
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.8), 0 10px 16px rgba(13,110,251,0.12);
 }
 
 .company-card h3 {
